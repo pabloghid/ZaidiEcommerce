@@ -1,4 +1,16 @@
 @extends("layout")
+
+<!-- @section("scriptjs")
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+$(function() {
+    //jquery onload -- ao carregar a pag 
+    $("#cpf").mask("000.000.000-00")
+});
+
+@endsection -->
 @section("conteudo")
 <div class="col-12">
     <div class="col-12">
@@ -21,7 +33,7 @@
             </div>
             <div class="col-6">
                 <div class="form-group">
-                    CPF: <input type="text" name="cpf" class="form-control" />
+                    CPF: <input type="text" name="cpf" id="cpf" class="form-control" />
                 </div>
             </div>
             <div class="col-6">

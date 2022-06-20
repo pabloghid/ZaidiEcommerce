@@ -5,6 +5,7 @@
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProdutoController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsuarioController;
 
 
 //usado o match pra pode passar um array com varios parametros sem necessidade de criar varias rotas
@@ -21,6 +22,10 @@ Route::match(["get", "post"], "/cadastrar", [ ClienteController::class, 'cadastr
 
 Route::match(["get", "post"], "/cliente/cadastrar", [ ClienteController::class, 'cadastrarCliente']) 
                 ->name("cadastrar_cliente");
+                
+Route::match(["get", "post"], "/logar", [ UsuarioController::class, 'logar']) 
+                ->name("logar");
+
 
 Route::match(["get", "post"], "/{idproduto}/carrinho/adicionar", [ ProdutoController::class, 'adicionarCarrinho']) 
                 ->name("adicionar_carrinho");
