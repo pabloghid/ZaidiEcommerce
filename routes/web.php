@@ -53,6 +53,15 @@ Route::group(['prefix' => 'admin/marcas'], function () {
     Route::put('{id}/update',   ['as' => 'marcasAdmin.update',    'uses' => '\App\Http\Controllers\MarcasController@update']);
 });
 
+Route::group(['prefix' => 'admin/produtos'], function () {
+    Route::get('',              ['as' => 'produtosAdmin',    'uses' => '\App\Http\Controllers\ProdutoController@indexAdmin']);
+    Route::get('create',       ['as' => 'produtosAdmin.create',    'uses' => '\App\Http\Controllers\ProdutoController@create']);
+    Route::post('store',       ['as' => 'produtosAdmin.store',    'uses' => '\App\Http\Controllers\ProdutoController@store']);
+    Route::get('{id}/destroy',  ['as' => 'produtosAdmin.destroy',    'uses' => '\App\Http\Controllers\ProdutoController@destroy']);
+    Route::get('{id}/edit',     ['as' => 'produtosAdmin.edit',    'uses' => '\App\Http\Controllers\ProdutoController@edit']);
+    Route::put('{id}/update',   ['as' => 'produtosAdmin.update',    'uses' => '\App\Http\Controllers\ProdutoController@update']);
+});
+
 Route::group(['prefix' => 'admin/categorias'], function () {
     Route::get('',              ['as' => 'categoriasAdmin',    'uses' => '\App\Http\Controllers\MarcaController@index']);
     Route::get('create',       ['as' => 'categoriasAdmin.create',    'uses' => '\App\Http\Controllers\MarcaController@create']);

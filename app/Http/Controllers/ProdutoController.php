@@ -4,22 +4,57 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Categoria;
+use App\Models\Marca;
 use App\Models\Produto;
+use App\Http\Requests\ProdutoRequest;
 
 class ProdutoController extends Controller
 {
-    public function index(Request $request) {
+    public function index() {
         $data = [];
-
 
         //Buscar todos os produtos
         //select * from produtos
         $listaProdutos = \App\Models\Produto::all();
         $data["lista"] = $listaProdutos;
 
-
         return view("home", $data);
+    }
+    
+    public function indexAdmin() {
+        $produtos = Produto::all();
+        return view('produtos.index', ['produtos'=>$produtos]);
 
+    }
+
+    public function create() {
+        $categorias = Categoria::all();
+        $marcas = Marca::all();
+        return view('produtos.create', ['categorias'=>$categorias, 'marcas'=>$marcas]);
+    }
+
+    public function store(Request $request) {
+        $novo_produto = $request->all();
+        Produto::create($novo_produto);
+
+        return redirect()->route('produtosAdmin');
+    }
+    
+    public function edit($id){
+        $produto = Produto::find($id);
+        $categorias = Categoria::all();
+        $marcas = Marca::all();
+        return view('Produtos.edit', compact(['produto', 'categorias', 'marcas']));
+    }
+
+    public function update(Request $request, $id) {
+        Produto::find($id)->update($request->all());
+        return redirect()->route('produtosAdmin');
+    }
+
+    public function destroy($id) {
+        Produto::find($id)->delete();
+        return redirect()->route('produtosAdmin');
     }
                              
     public function categoria(Request $request, $idcategoria = 0) {  //criando uma sobrecarga no metodo
