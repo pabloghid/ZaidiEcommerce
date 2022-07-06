@@ -40,6 +40,10 @@ Route::get('/admin', function () {
         return view('admin.index');
     });
 
+route::group(['prefix' => 'marca'], function () {
+    Route::get('{idmarca?}',              ['as' => 'marcas',    'uses' => '\App\Http\Controllers\MarcasController@marcas']);
+});
+
 Route::group(['prefix' => 'admin/marcas'], function () {
     Route::get('',              ['as' => 'marcasAdmin',    'uses' => '\App\Http\Controllers\MarcasController@index']);
     Route::get('create',       ['as' => 'marcasAdmin.create',    'uses' => '\App\Http\Controllers\MarcasController@create']);
