@@ -4,10 +4,10 @@
         @foreach($lista as $prod)
             <div class="col-2 mb-2">
                 <div class="card">
-                    <img src="{{ asset('$prod -> foto') }}" class="card-img-top" />  
+                    <img src="{{ asset($prod->foto) }}" class="card-img-top" />  
                     <div class="card-body">
-                        <h6 class="card-title">{{$prod->nome}} - R$ {{ $prod->valor }}</h6>
-                        <a href="{{ route ('adicionar_carrinho', [ 'idproduto' => $prod->id] ) }}" class="btn btn-sm btn-secundary">Adicionar Item</a>
+                        <h6 class="card-title">{{$prod->nome}} - R$ {{ number_format($prod->valor, 2, ',', '.') }}</h6>
+                        <a href="{{ route ('adicionar_carrinho', [ 'idproduto' => $prod->id] ) }}" class="btn btn-sm btn-primary">Adicionar ao Carrinho</a>
                     </div>
                 </div>
             </div>

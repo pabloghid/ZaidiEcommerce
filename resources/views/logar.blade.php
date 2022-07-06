@@ -14,10 +14,10 @@
 
             <div class="form-group">
                 Senha:
-                <input type="password" name="login" class="form-control">
+                <input type="password" name="password" class="form-control">
             </div>
 
-            <input type="submit" value="Logar" class="btn btn-lg btn-primary">
+            <input type="submit" value="Logar" class="btn btn-primary mt-2">
         </form>
     </div>
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Usuario;
 use App\Models\Endereco;
 use App\Services\ClienteServices;
+use Illuminate\Support\Facades\Hash;
 
 class ClienteController extends Controller
 {
@@ -28,15 +29,15 @@ class ClienteController extends Controller
         $endereco->logradouro = $request->input("endereço", "");
 
         $senha = $request->input("password","");
-        $usuario->password = \Hash::make($senha); //criptografando senha nativo laravel
+        $usuario->password = Hash::make($senha); //criptografando senha nativo laravel
 
         $ClienteServices = new ClienteServices();
         $result = $ClienteServices->salvarUsuario($usuario, $endereco);
 
-        $message = $result["message"];
+        $message = $result['message'];
         $status = $result["status"];
         
-        $request->session()->flash($status, "message"); //grav de uma requisicao pra outra
+        $request->session()->flash($status, $message); //grav de uma requisicao pra outra
 
         return redirect()->route("cadastrar");
     }

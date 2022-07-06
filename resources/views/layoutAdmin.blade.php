@@ -34,13 +34,13 @@
 <body>
     <nav class="navbar navbar-light navbar-expand-md bg-light pl-5 pr-5 mb-5">
         <div class="container-fluid">
-            <a href="#" class="navbar-brand">Zaidi</a>
+            <a href="#" class="navbar-brand">Zaidi - Admin</a>
             <div class="collapse navbar-collapse">
                 <div class="navbar-nav">
                     <a class="nav-link" href="{{ route('home') }} ">HOME</a>
-                    <a class="nav-link" href="{{ route('categoria') }} ">Categorias</a>
-                    <a class="nav-link" href="{{ route('cadastrar') }} ">Cadastrar</a>
-                    <a class="nav-link" href="{{ route('logar') }} ">Login</a>
+                    <a class="nav-link" href="{{ route('categoriasAdmin') }} ">Categorias</a>
+                    <a class="nav-link" href="{{ route('marcasAdmin') }} ">Marcas</a>
+                    {{-- <a class="nav-link" href="{{ route('logar') }} ">Produtos</a> --}}
                 </div>
             </div>
             <a href="{{ route('ver_carrinho') }}" class="btn btn-sm"><i class="fa fa-shopping-cart"></i></a>

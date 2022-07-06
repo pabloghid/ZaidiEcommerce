@@ -1,5 +1,6 @@
 @extends("layout")
 
+{{--
 <!-- @section("scriptjs")
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -10,7 +11,7 @@ $(function() {
     $("#cpf").mask("000.000.000-00")
 });
 
-@endsection -->
+@endsection --> --}}
 @section("conteudo")
 <div class="col-12">
     <div class="col-12">
@@ -31,16 +32,21 @@ $(function() {
                     Email: <input type="email" name="email" class="form-control" />
                 </div>
             </div>
+        </div>
+        <div class="row mt-2">
             <div class="col-6">
                 <div class="form-group">
                     CPF: <input type="text" name="cpf" id="cpf" class="form-control" />
                 </div>
             </div>
+
             <div class="col-6">
                 <div class="form-group">
                     Senha: <input type="password" name="password" class="form-control" />
                 </div>
             </div>
+        </div>
+        <div class="row mt-2">
             <div class="col-8">
                 <div class="form-group">
                     Enderço: <input type="text" name="endereço" class="form-control" />
@@ -56,6 +62,8 @@ $(function() {
                     Complemento: <input type="text" name="complemento" class="form-control" />
                 </div>
             </div>
+        </div>
+        <div class="row mt-2">
             <div class="col-4">
                 <div class="form-group">
                     Cidade: <input type="text" name="cidade" class="form-control" />
@@ -71,8 +79,13 @@ $(function() {
                     Estado: <input type="text" name="estado" class="form-control" />
                 </div>
             </div>
-            <input type="submit" value="Cadastrar" class="btn btn-sucess btn-sm" />
         </div>
-    </form> 
+        <div class="row mt-2">
+            <div class="col-4">
+                <input type="submit" value="Cadastrar" class="btn btn-success" />
+            </div>
+        </div>
+</div>
+</form>
 </div>
 @endsection
